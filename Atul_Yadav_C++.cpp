@@ -1,9 +1,9 @@
 #include<iostream>
-long int mdex(int,int,int);
+ int mdex(int,int,int);
  int main()
  {
      int x,y,p;
-     long int rs;
+      int rs;
      std::cout<<"enter threee no for modulus exponentiation";
 //input
      std::cin>>x>>y>>p;
@@ -14,13 +14,14 @@ long int mdex(int,int,int);
     
  }
 // function for modulus exponentiation 
-long int mdex(int x,int y,int p)
+int mdex(int x,int y,int p)
 {
-    long int k=1;
+    int k=1;
     while(y)
     {
         k=k*x;
+        k=k%p;
         --y;
     }
-    return k%p;
+    return k;
 }
