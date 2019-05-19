@@ -1,4 +1,4 @@
-// c++ prog to implement modular expiation
+// c++ prog to implement modular exponentiation
     #include <iostream>
     #define ll long long
     using namespace std;
