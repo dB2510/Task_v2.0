@@ -1,0 +1,35 @@
+#include<bits/stdc++.h>
+using namespace std;  
+long long h;
+long long i;
+int findmod(int x, int y, int z) 
+{ 
+    if(x==0) 
+        return 0; 
+    if(y==0) 
+        return 1;  
+    if(y%2==0){ 
+        h = findmod(x, y / 2, z); 
+        i= (h%z*h%z) % z; 
+    } 
+  
+    else{  
+        i=(x%z*findmod(x, y - 1, z) % z)% z; 
+    } 
+  
+    if(i>=0){
+    	return i;
+	} 
+	else{
+		return (i+z)%z;
+	}
+} 
+int main()  
+{  
+   long int x,y,z;
+   cout<<"Enter the base, exponent and modulus";
+   cin>>x>>y>>z;
+   long int r=findmod(x,y,z);
+   cout<<"The modulus is "<<r;
+   return 0;
+}  
